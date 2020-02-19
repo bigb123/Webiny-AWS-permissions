@@ -49,7 +49,7 @@ Outputs:
     Description: >
       Webiny User Access Key Id.
     Value: !Ref WebinyUserAccessKey
-  WebinySecretAccessKey:
+  WebinyUserSecretAccessKey:
     Description: >
       Webiny User Access Key Id.
     Value: !GetAtt WebinyUserAccessKey.SecretAccessKey
