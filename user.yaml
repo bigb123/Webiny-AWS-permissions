@@ -1,0 +1,49 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Description: >
+  AWS user with minimal permissions required to deploy Webiny.
+
+##############################
+#
+# Parameters
+#
+##############################
+
+# Parameters:
+
+
+##############################
+#
+# Resources
+#
+##############################
+
+Resources:
+
+  WebinyUser:
+    Type: AWS::IAM::User
+    UserName: Webiny-user
+    ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/AdministratorAccess
+
+    WebinyUserAccessKey:
+      Type: AWS::IAM::AccessKey
+      Properties:
+        UserName: !Ref WebinyUser
+
+
+##############################
+#
+# Outputs
+#
+##############################
+
+Outputs:
+  WebinyUserAccessKeyId:
+    Description: >
+      Webiny User Access Key Id.
+    Value: !Ref WebinyUserAccessKey
+  WebinySecretAccessKey:
+    Description: >
+      Webiny User Access Key Id.
+    Value: !GetAtt WebinyUserAccessKey.SecretAccessKey

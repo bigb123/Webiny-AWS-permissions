@@ -1,2 +1,2 @@
-# Webiny-AWS-profile
-AWS profile with minimal permissions to deploy Webiny
+# Webiny-AWS-user
+AWS user with minimal permissions to deploy Webiny
