@@ -32,10 +32,10 @@ Resources:
         - arn:aws:iam::aws:policy/CloudFrontFullAccess
         - arn:aws:iam::aws:policy/CloudWatchFullAccess
 
-    WebinyUserAccessKey:
-      Type: AWS::IAM::AccessKey
-      Properties:
-        UserName: !Ref WebinyUser
+  WebinyUserAccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      UserName: !Ref WebinyUser
 
 
 ##############################
