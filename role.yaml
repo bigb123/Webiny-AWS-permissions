@@ -21,7 +21,7 @@ Description: >
 Resources:
 
   WebinyUser:
-    Type: AWS::IAM::Role
+    Type: AWS::IAM::User
     Properties:
       UserName: Webiny-user
       ManagedPolicyArns:
