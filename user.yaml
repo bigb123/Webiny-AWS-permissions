@@ -55,7 +55,7 @@ Resources:
           - Effect: Allow
             Principal:
               AWS:
-              - "arn:aws:iam::${AWS::AccountId}:root"
+              - !Sub "arn:aws:iam::${AWS::AccountId}:root"
             Action:
               - 'sts:AssumeRole'
 
