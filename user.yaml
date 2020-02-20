@@ -20,10 +20,29 @@ Description: >
 
 Resources:
 
-  WebinyUser:
-    Type: AWS::IAM::User
+  # WebinyUser:
+  #   Type: AWS::IAM::Role
+  #   Properties:
+  #     UserName: Webiny-user
+  #     ManagedPolicyArns:
+  #       - arn:aws:iam::aws:policy/AmazonS3FullAccess
+  #       - arn:aws:iam::aws:policy/AmazonESCognitoAccess
+  #       - arn:aws:iam::aws:policy/AWSLambdaFullAccess
+  #       - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
+  #       - arn:aws:iam::aws:policy/CloudFrontFullAccess
+  #       - arn:aws:iam::aws:policy/CloudWatchFullAccess
+  #
+  # WebinyUserAccessKey:
+  #   Type: AWS::IAM::AccessKey
+  #   Properties:
+  #     UserName: !Ref WebinyUser
+
+  WebinyDeploymentRole:
+    Type: AWS::IAM::Role
     Properties:
-      UserName: Webiny-user
+      RoleName: Webiny-deployment-role
+      Description: >
+        Role that have to be used when deploying Webiny on AWS.
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonS3FullAccess
         - arn:aws:iam::aws:policy/AmazonESCognitoAccess
@@ -31,11 +50,15 @@ Resources:
         - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
         - arn:aws:iam::aws:policy/CloudFrontFullAccess
         - arn:aws:iam::aws:policy/CloudWatchFullAccess
-
-  WebinyUserAccessKey:
-    Type: AWS::IAM::AccessKey
-    Properties:
-      UserName: !Ref WebinyUser
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS:
+              - "arn:aws:iam::{{AWS::AccountId}}:user/*"
+            Action:
+              - 'sts:AssumeRole'
 
 
 ##############################
@@ -45,11 +68,14 @@ Resources:
 ##############################
 
 Outputs:
-  WebinyUserAccessKeyId:
-    Description: >
-      Webiny User Access Key Id.
-    Value: !Ref WebinyUserAccessKey
-  WebinyUserSecretAccessKey:
-    Description: >
-      Webiny User Access Key Id.
-    Value: !GetAtt WebinyUserAccessKey.SecretAccessKey
+  WebinyDeploymentRoleArn:
+    Description: Role arn to use when deploying webiny
+    Value: !GetAtt WebinyDeploymentRole.Arn
+  # WebinyUserAccessKeyId:
+  #   Description: >
+  #     Webiny User Access Key Id.
+  #   Value: !Ref WebinyUserAccessKey
+  # WebinyUserSecretAccessKey:
+  #   Description: >
+  #     Webiny User Access Key Id.
+  #   Value: !GetAtt WebinyUserAccessKey.SecretAccessKey
