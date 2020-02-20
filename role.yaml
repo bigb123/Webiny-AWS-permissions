@@ -1,7 +1,7 @@
 ---
 AWSTemplateFormatVersion: 2010-09-09
 Description: >
-  AWS user with minimal permissions required to deploy Webiny.
+  AWS role with minimal permissions required to deploy Webiny.
 
 ##############################
 #
