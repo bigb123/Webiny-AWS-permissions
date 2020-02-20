@@ -26,7 +26,7 @@ Resources:
       UserName: Webiny-user
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonS3FullAccess
-        - arn:aws:iam::aws:policy/AmazonESCognitoAccess
+        - arn:aws:iam::aws:policy/AmazonCognitoPowerUser
         - arn:aws:iam::aws:policy/AWSLambdaFullAccess
         - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
         - arn:aws:iam::aws:policy/CloudFrontFullAccess
@@ -44,7 +44,7 @@ Resources:
       Description: Role that have to be used when deploying Webiny on AWS.
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonS3FullAccess
-        - arn:aws:iam::aws:policy/AmazonESCognitoAccess
+        - arn:aws:iam::aws:policy/AmazonCognitoPowerUser
         - arn:aws:iam::aws:policy/AWSLambdaFullAccess
         - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
         - arn:aws:iam::aws:policy/CloudFrontFullAccess
