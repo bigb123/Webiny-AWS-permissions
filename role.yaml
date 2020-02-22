@@ -29,7 +29,12 @@ Resources:
         Statement:
           - Action:
             - apigateway:*
+            - cloudfront:CreateDistribution
+            - cloudfront:DeleteDistribution
+            - cloudfront:GetDistributionConfig
+            - cloudfront:UpdateDistribution
             - cognito-idp:CreateUserPoolClient
+            - cognito-idp:DeleteUserPool
             - iam:AttachRolePolicy
             - iam:CreateRole
             - iam:DeleteRole
