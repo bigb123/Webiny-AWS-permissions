@@ -62,7 +62,7 @@ Resources:
             Resource: "*"
             Effect: Allow
       Users:
-        - !Ref WebinyUser
+        - !Ref WebinyDeploymentUser
       # Roles:
       #   - !Ref WebinyDeploymentRole
 
