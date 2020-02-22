@@ -1,2 +1,2 @@
-# Webiny-AWS-role
-AWS role with minimal permissions to deploy Webiny
+# Webiny-AWS-permissions
+Minimal AWS permissions to deploy Webiny
