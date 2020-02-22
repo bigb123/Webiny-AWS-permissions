@@ -33,7 +33,7 @@ Resources:
             - cloudfront:DeleteDistribution
             - cloudfront:GetDistributionConfig
             - cloudfront:UpdateDistribution
-            - cognito-idp:CreateUserPoolClient
+            - cognito-idp:CreateUserPool
             - cognito-idp:DeleteUserPool
             - iam:AttachRolePolicy
             - iam:CreateRole
