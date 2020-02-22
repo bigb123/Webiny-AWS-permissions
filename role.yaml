@@ -20,18 +20,46 @@ Description: >
 
 Resources:
 
+  WebinyDeploymentPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: Webiny-deployment-policy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+            - apigateway:*
+            - cognito-idp:CreateUserPoolClient
+            - iam:AttachRolePolicy
+            - iam:CreateRole
+            - iam:GetRole
+            - kms:CreateGrant
+            - kms:Decrypt
+            - kms:DescribeKey
+            - kms:Encrypt
+            - lambda:AddPermission
+            - lambda:CreateFunction
+            - lambda:GetFunctionConfiguration
+            - s3:CreateBucket
+            - s3:PutBucketCORS
+            - s3:PutBucketNotification
+            Resource: "*"
+            Effect: Allow
+      Users:
+        - !Ref WebinyUser
+
   WebinyUser:
     Type: AWS::IAM::User
     Properties:
       UserName: Webiny-user
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/AmazonS3FullAccess
-        - arn:aws:iam::aws:policy/AmazonCognitoPowerUser
-        - arn:aws:iam::aws:policy/AWSLambdaFullAccess
-        - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
-        - arn:aws:iam::aws:policy/CloudFrontFullAccess
-        - arn:aws:iam::aws:policy/CloudWatchFullAccess
-        - arn:aws:iam::aws:policy/IAMFullAccess
+      # ManagedPolicyArns:
+      #   - arn:aws:iam::aws:policy/AmazonS3FullAccess
+      #   - arn:aws:iam::aws:policy/AmazonCognitoPowerUser
+      #   - arn:aws:iam::aws:policy/AWSLambdaFullAccess
+      #   - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
+      #   - arn:aws:iam::aws:policy/CloudFrontFullAccess
+      #   - arn:aws:iam::aws:policy/CloudWatchFullAccess
+      #   - arn:aws:iam::aws:policy/IAMFullAccess
 
   WebinyUserAccessKey:
     Type: AWS::IAM::AccessKey
