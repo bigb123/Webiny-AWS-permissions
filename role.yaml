@@ -63,8 +63,8 @@ Resources:
             Effect: Allow
       Users:
         - !Ref WebinyUser
-      Roles:
-        - !Ref WebinyDeploymentRole
+      # Roles:
+      #   - !Ref WebinyDeploymentRole
 
   WebinyUser:
     Type: AWS::IAM::User
