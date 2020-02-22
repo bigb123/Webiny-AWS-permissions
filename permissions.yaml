@@ -66,10 +66,10 @@ Resources:
       # Roles:
       #   - !Ref WebinyDeploymentRole
 
-  WebinyUser:
+  WebinyDeploymentUser:
     Type: AWS::IAM::User
     Properties:
-      UserName: Webiny-user
+      UserName: Webiny-deployment-user
 
   WebinyUserAccessKey:
     Type: AWS::IAM::AccessKey
