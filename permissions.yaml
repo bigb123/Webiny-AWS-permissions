@@ -74,7 +74,7 @@ Resources:
   WebinyUserAccessKey:
     Type: AWS::IAM::AccessKey
     Properties:
-      UserName: !Ref WebinyUser
+      UserName: !Ref WebinyDeploymentUser
 
   # WebinyDeploymentRole:
   #   Type: AWS::IAM::Role
