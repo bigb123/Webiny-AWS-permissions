@@ -41,6 +41,7 @@ Resources:
             - iam:DeleteRole
             - iam:DetachRolePolicy
             - iam:GetRole
+            - iam:PassRole
             - kms:CreateGrant
             - kms:Decrypt
             - kms:DescribeKey
