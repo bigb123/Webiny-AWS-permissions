@@ -52,14 +52,14 @@ Resources:
     Type: AWS::IAM::User
     Properties:
       UserName: Webiny-user
-      # ManagedPolicyArns:
-      #   - arn:aws:iam::aws:policy/AmazonS3FullAccess
-      #   - arn:aws:iam::aws:policy/AmazonCognitoPowerUser
-      #   - arn:aws:iam::aws:policy/AWSLambdaFullAccess
-      #   - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
-      #   - arn:aws:iam::aws:policy/CloudFrontFullAccess
-      #   - arn:aws:iam::aws:policy/CloudWatchFullAccess
-      #   - arn:aws:iam::aws:policy/IAMFullAccess
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/AmazonCognitoPowerUser
+        - arn:aws:iam::aws:policy/AWSLambdaFullAccess
+        - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
+        - arn:aws:iam::aws:policy/CloudFrontFullAccess
+        - arn:aws:iam::aws:policy/CloudWatchFullAccess
+        - arn:aws:iam::aws:policy/IAMFullAccess
 
   WebinyUserAccessKey:
     Type: AWS::IAM::AccessKey
