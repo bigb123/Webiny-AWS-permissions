@@ -104,14 +104,19 @@ Resources:
 ##############################
 
 Outputs:
-  WebinyUserAccessKeyId:
+  WebinyUserName:
     Description: >
-      Webiny User Access Key Id.
-    Value: !Ref WebinyUserAccessKey
-  WebinyUserSecretAccessKey:
-    Description: >
-      Webiny User Access Key Id.
-    Value: !GetAtt WebinyUserAccessKey.SecretAccessKey
+      Webiny User name.
+    Value: !Ref WebinyDeploymentUser
+
+#   WebinyUserAccessKeyId:
+#     Description: >
+#       Webiny User Access Key Id.
+#     Value: !Ref WebinyUserAccessKey
+#   WebinyUserSecretAccessKey:
+#     Description: >
+#       Webiny User Access Key Id.
+#     Value: !GetAtt WebinyUserAccessKey.SecretAccessKey
   # WebinyDeploymentRoleArn:
   #   Description: Role arn to use when deploying webiny
   #   Value: !GetAtt WebinyDeploymentRole.Arn
