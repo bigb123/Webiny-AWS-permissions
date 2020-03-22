@@ -50,6 +50,7 @@ Resources:
             - kms:DescribeKey
             - kms:Encrypt
             - lambda:AddPermission
+            - lambda:AddPermission20150331v2
             - lambda:CreateFunction
             - lambda:CreateFunction20150331
             - lambda:DeleteFunction
@@ -57,7 +58,9 @@ Resources:
             - lambda:GetFunctionConfiguration
             - lambda:GetFunctionConfiguration20150331v2
             - lambda:UpdateFunctionCode
+            - lambda:UpdateFunctionCode20150331v2
             - lambda:UpdateFunctionConfiguration
+            - lambda:UpdateFunctionConfiguration20150331v2
             - s3:CreateBucket
             - s3:ListBucket
             - s3:PutAccelerateConfiguration
